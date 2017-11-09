@@ -1,0 +1,36 @@
+C:\Users\rapha\Desktop\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+C:\Users\rapha\Desktop\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+C:\Users\rapha\Desktop\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+C:\Users\rapha\Desktop\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\InfoWorldApp.csprojResolveAssemblyReference.cache
+C:\Users\rapha\Desktop\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.frmLogin.resources
+C:\Users\rapha\Desktop\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.frmMenuPrincipal.resources
+C:\Users\rapha\Desktop\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+C:\Users\rapha\Desktop\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\InfoWorldApp.csproj.GenerateResource.Cache
+C:\Users\rapha\Desktop\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+C:\Users\rapha\Desktop\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+C:\Users\rapha\Desktop\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.frmFuncionario.resources
+C:\Users\rapha\Desktop\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.frmFornecerAcesso.resources
+E:\CRUZEIRO_DO_SUL\ADS\ÚLTIMO SEMESTRE\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+E:\CRUZEIRO_DO_SUL\ADS\ÚLTIMO SEMESTRE\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+E:\CRUZEIRO_DO_SUL\ADS\ÚLTIMO SEMESTRE\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+E:\CRUZEIRO_DO_SUL\ADS\ÚLTIMO SEMESTRE\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\banco.mdf
+E:\CRUZEIRO_DO_SUL\ADS\ÚLTIMO SEMESTRE\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\banco_log.ldf
+E:\CRUZEIRO_DO_SUL\ADS\ÚLTIMO SEMESTRE\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+E:\CRUZEIRO_DO_SUL\ADS\ÚLTIMO SEMESTRE\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+E:\CRUZEIRO_DO_SUL\ADS\ÚLTIMO SEMESTRE\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\InfoWorldApp.csprojResolveAssemblyReference.cache
+E:\CRUZEIRO_DO_SUL\ADS\ÚLTIMO SEMESTRE\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.frmFornecerAcesso.resources
+E:\CRUZEIRO_DO_SUL\ADS\ÚLTIMO SEMESTRE\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.frmFuncionario.resources
+E:\CRUZEIRO_DO_SUL\ADS\ÚLTIMO SEMESTRE\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.frmLogin.resources
+E:\CRUZEIRO_DO_SUL\ADS\ÚLTIMO SEMESTRE\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.frmMenuPrincipal.resources
+E:\CRUZEIRO_DO_SUL\ADS\ÚLTIMO SEMESTRE\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+E:\CRUZEIRO_DO_SUL\ADS\ÚLTIMO SEMESTRE\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\InfoWorldApp.csproj.GenerateResource.Cache
+E:\CRUZEIRO_DO_SUL\ADS\ÚLTIMO SEMESTRE\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\banco2013.mdf
+E:\CRUZEIRO_DO_SUL\ADS\ÚLTIMO SEMESTRE\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\banco2013_log.ldf
+C:\Users\rapha\Desktop\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.frmCliente.resources
+C:\Users\rapha\Desktop\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\bancodedados.mdf
+C:\Users\rapha\Desktop\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\bancodedados_log.ldf
+C:\Users\rapha\Desktop\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.frmEstoque.resources
+C:\Users\rapha\Desktop\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.frmManutencao.resources
+C:\Users\rapha\Desktop\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.frmManutencoesConcluidas.resources
+C:\Users\rapha\Desktop\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.frmRegistroVenda.resources
+C:\Users\rapha\Desktop\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.frmVendasRealizadas.resources
