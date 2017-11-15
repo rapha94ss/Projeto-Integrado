@@ -283,8 +283,6 @@ namespace WindowsFormsApp2 {
             
             private global::System.Data.DataColumn columnItem;
             
-            private global::System.Data.DataColumn columnPrecoTotal;
-            
             private global::System.Data.DataColumn columnQuantidade;
             
             private global::System.Data.DataColumn columnCpf;
@@ -292,6 +290,8 @@ namespace WindowsFormsApp2 {
             private global::System.Data.DataColumn columnFormaPagamento;
             
             private global::System.Data.DataColumn columnParcelas;
+            
+            private global::System.Data.DataColumn columnPrecoTotal;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -344,14 +344,6 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PrecoTotalColumn {
-                get {
-                    return this.columnPrecoTotal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn QuantidadeColumn {
                 get {
                     return this.columnQuantidade;
@@ -379,6 +371,14 @@ namespace WindowsFormsApp2 {
             public global::System.Data.DataColumn ParcelasColumn {
                 get {
                     return this.columnParcelas;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PrecoTotalColumn {
+                get {
+                    return this.columnPrecoTotal;
                 }
             }
             
@@ -419,16 +419,16 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VendaRow AddVendaRow(string Item, string PrecoTotal, int Quantidade, string Cpf, string FormaPagamento, int Parcelas) {
+            public VendaRow AddVendaRow(string Item, int Quantidade, string Cpf, string FormaPagamento, int Parcelas, decimal PrecoTotal) {
                 VendaRow rowVendaRow = ((VendaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Item,
-                        PrecoTotal,
                         Quantidade,
                         Cpf,
                         FormaPagamento,
-                        Parcelas};
+                        Parcelas,
+                        PrecoTotal};
                 rowVendaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowVendaRow);
                 return rowVendaRow;
@@ -460,11 +460,11 @@ namespace WindowsFormsApp2 {
             internal void InitVars() {
                 this.columnCodVenda = base.Columns["CodVenda"];
                 this.columnItem = base.Columns["Item"];
-                this.columnPrecoTotal = base.Columns["PrecoTotal"];
                 this.columnQuantidade = base.Columns["Quantidade"];
                 this.columnCpf = base.Columns["Cpf"];
                 this.columnFormaPagamento = base.Columns["FormaPagamento"];
                 this.columnParcelas = base.Columns["Parcelas"];
+                this.columnPrecoTotal = base.Columns["PrecoTotal"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -478,8 +478,6 @@ namespace WindowsFormsApp2 {
                 this.columnItem.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnItem");
                 this.columnItem.ExtendedProperties.Add("Generator_UserColumnName", "Item");
                 base.Columns.Add(this.columnItem);
-                this.columnPrecoTotal = new global::System.Data.DataColumn("PrecoTotal", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPrecoTotal);
                 this.columnQuantidade = new global::System.Data.DataColumn("Quantidade", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQuantidade);
                 this.columnCpf = new global::System.Data.DataColumn("Cpf", typeof(string), null, global::System.Data.MappingType.Element);
@@ -488,6 +486,8 @@ namespace WindowsFormsApp2 {
                 base.Columns.Add(this.columnFormaPagamento);
                 this.columnParcelas = new global::System.Data.DataColumn("Parcelas", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnParcelas);
+                this.columnPrecoTotal = new global::System.Data.DataColumn("PrecoTotal", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrecoTotal);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCodVenda}, true));
                 this.columnCodVenda.AutoIncrement = true;
@@ -497,7 +497,6 @@ namespace WindowsFormsApp2 {
                 this.columnCodVenda.ReadOnly = true;
                 this.columnCodVenda.Unique = true;
                 this.columnItem.MaxLength = 50;
-                this.columnPrecoTotal.MaxLength = 10;
                 this.columnCpf.MaxLength = 50;
                 this.columnFormaPagamento.MaxLength = 50;
             }
@@ -669,22 +668,6 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string PrecoTotal {
-                get {
-                    try {
-                        return ((string)(this[this.tableVenda.PrecoTotalColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PrecoTotal\' in table \'Venda\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableVenda.PrecoTotalColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int Quantidade {
                 get {
                     try {
@@ -749,6 +732,22 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal PrecoTotal {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableVenda.PrecoTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PrecoTotal\' in table \'Venda\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVenda.PrecoTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsItemNull() {
                 return this.IsNull(this.tableVenda.ItemColumn);
             }
@@ -757,18 +756,6 @@ namespace WindowsFormsApp2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetItemNull() {
                 this[this.tableVenda.ItemColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPrecoTotalNull() {
-                return this.IsNull(this.tableVenda.PrecoTotalColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPrecoTotalNull() {
-                this[this.tableVenda.PrecoTotalColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -817,6 +804,18 @@ namespace WindowsFormsApp2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetParcelasNull() {
                 this[this.tableVenda.ParcelasColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPrecoTotalNull() {
+                return this.IsNull(this.tableVenda.PrecoTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPrecoTotalNull() {
+                this[this.tableVenda.PrecoTotalColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -981,11 +980,11 @@ namespace WindowsFormsApp2.vendasDataSetTableAdapters {
             tableMapping.DataSetTable = "Venda";
             tableMapping.ColumnMappings.Add("CodVenda", "CodVenda");
             tableMapping.ColumnMappings.Add("Item", "Item");
-            tableMapping.ColumnMappings.Add("PrecoTotal", "PrecoTotal");
             tableMapping.ColumnMappings.Add("Quantidade", "Quantidade");
             tableMapping.ColumnMappings.Add("Cpf", "Cpf");
             tableMapping.ColumnMappings.Add("FormaPagamento", "FormaPagamento");
             tableMapping.ColumnMappings.Add("Parcelas", "Parcelas");
+            tableMapping.ColumnMappings.Add("PrecoTotal", "PrecoTotal");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -995,7 +994,7 @@ namespace WindowsFormsApp2.vendasDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Item", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Item", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Item", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Item", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PrecoTotal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PrecoTotal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PrecoTotal", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PrecoTotal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PrecoTotal", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PrecoTotal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Quantidade", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantidade", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantidade", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantidade", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Cpf", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cpf", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1010,7 +1009,7 @@ namespace WindowsFormsApp2.vendasDataSetTableAdapters {
 SELECT CodVenda, Item, PrecoTotal, Quantidade, Cpf, FormaPagamento, Parcelas FROM Venda WHERE (CodVenda = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Item", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Item", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PrecoTotal", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PrecoTotal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PrecoTotal", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PrecoTotal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantidade", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantidade", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cpf", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cpf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FormaPagamento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FormaPagamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1021,7 +1020,7 @@ SELECT CodVenda, Item, PrecoTotal, Quantidade, Cpf, FormaPagamento, Parcelas FRO
 SELECT CodVenda, Item, PrecoTotal, Quantidade, Cpf, FormaPagamento, Parcelas FROM Venda WHERE (CodVenda = @CodVenda)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Item", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Item", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PrecoTotal", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PrecoTotal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PrecoTotal", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PrecoTotal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantidade", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantidade", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cpf", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cpf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FormaPagamento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FormaPagamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1030,7 +1029,7 @@ SELECT CodVenda, Item, PrecoTotal, Quantidade, Cpf, FormaPagamento, Parcelas FRO
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Item", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Item", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Item", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Item", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PrecoTotal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PrecoTotal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PrecoTotal", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PrecoTotal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PrecoTotal", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PrecoTotal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Quantidade", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantidade", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantidade", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantidade", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Cpf", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cpf", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1062,13 +1061,13 @@ SELECT CodVenda, Item, PrecoTotal, Quantidade, Cpf, FormaPagamento, Parcelas FRO
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "dbo.inserirVenda";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Item", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PrecoTotal", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantidade", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cpf", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FormaPagamento", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Parcelas", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Variant, 0, global::System.Data.ParameterDirection.ReturnValue, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Item", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Item", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PrecoTotal", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 2, "PrecoTotal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantidade", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Quantidade", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cpf", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Cpf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FormaPagamento", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "FormaPagamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Parcelas", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Parcelas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1128,7 +1127,7 @@ SELECT CodVenda, Item, PrecoTotal, Quantidade, Cpf, FormaPagamento, Parcelas FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_CodVenda, string Original_Item, string Original_PrecoTotal, global::System.Nullable<int> Original_Quantidade, string Original_Cpf, string Original_FormaPagamento, global::System.Nullable<int> Original_Parcelas) {
+        public virtual int Delete(int Original_CodVenda, string Original_Item, global::System.Nullable<decimal> Original_PrecoTotal, global::System.Nullable<int> Original_Quantidade, string Original_Cpf, string Original_FormaPagamento, global::System.Nullable<int> Original_Parcelas) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_CodVenda));
             if ((Original_Item == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -1138,13 +1137,13 @@ SELECT CodVenda, Item, PrecoTotal, Quantidade, Cpf, FormaPagamento, Parcelas FRO
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Item));
             }
-            if ((Original_PrecoTotal == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            if ((Original_PrecoTotal.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((decimal)(Original_PrecoTotal.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_PrecoTotal));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             if ((Original_Quantidade.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
@@ -1198,18 +1197,18 @@ SELECT CodVenda, Item, PrecoTotal, Quantidade, Cpf, FormaPagamento, Parcelas FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Item, string PrecoTotal, global::System.Nullable<int> Quantidade, string Cpf, string FormaPagamento, global::System.Nullable<int> Parcelas) {
+        public virtual int Insert(string Item, global::System.Nullable<decimal> PrecoTotal, global::System.Nullable<int> Quantidade, string Cpf, string FormaPagamento, global::System.Nullable<int> Parcelas) {
             if ((Item == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Item));
             }
-            if ((PrecoTotal == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            if ((PrecoTotal.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(PrecoTotal.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(PrecoTotal));
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             if ((Quantidade.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Quantidade.Value));
@@ -1255,18 +1254,18 @@ SELECT CodVenda, Item, PrecoTotal, Quantidade, Cpf, FormaPagamento, Parcelas FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Item, string PrecoTotal, global::System.Nullable<int> Quantidade, string Cpf, string FormaPagamento, global::System.Nullable<int> Parcelas, int Original_CodVenda, string Original_Item, string Original_PrecoTotal, global::System.Nullable<int> Original_Quantidade, string Original_Cpf, string Original_FormaPagamento, global::System.Nullable<int> Original_Parcelas, int CodVenda) {
+        public virtual int Update(string Item, global::System.Nullable<decimal> PrecoTotal, global::System.Nullable<int> Quantidade, string Cpf, string FormaPagamento, global::System.Nullable<int> Parcelas, int Original_CodVenda, string Original_Item, global::System.Nullable<decimal> Original_PrecoTotal, global::System.Nullable<int> Original_Quantidade, string Original_Cpf, string Original_FormaPagamento, global::System.Nullable<int> Original_Parcelas, int CodVenda) {
             if ((Item == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Item));
             }
-            if ((PrecoTotal == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            if ((PrecoTotal.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(PrecoTotal.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(PrecoTotal));
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             if ((Quantidade.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Quantidade.Value));
@@ -1301,13 +1300,13 @@ SELECT CodVenda, Item, PrecoTotal, Quantidade, Cpf, FormaPagamento, Parcelas FRO
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Item));
             }
-            if ((Original_PrecoTotal == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            if ((Original_PrecoTotal.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(Original_PrecoTotal.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_PrecoTotal));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             if ((Original_Quantidade.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
@@ -1362,7 +1361,7 @@ SELECT CodVenda, Item, PrecoTotal, Quantidade, Cpf, FormaPagamento, Parcelas FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Item, string PrecoTotal, global::System.Nullable<int> Quantidade, string Cpf, string FormaPagamento, global::System.Nullable<int> Parcelas, int Original_CodVenda, string Original_Item, string Original_PrecoTotal, global::System.Nullable<int> Original_Quantidade, string Original_Cpf, string Original_FormaPagamento, global::System.Nullable<int> Original_Parcelas) {
+        public virtual int Update(string Item, global::System.Nullable<decimal> PrecoTotal, global::System.Nullable<int> Quantidade, string Cpf, string FormaPagamento, global::System.Nullable<int> Parcelas, int Original_CodVenda, string Original_Item, global::System.Nullable<decimal> Original_PrecoTotal, global::System.Nullable<int> Original_Quantidade, string Original_Cpf, string Original_FormaPagamento, global::System.Nullable<int> Original_Parcelas) {
             return this.Update(Item, PrecoTotal, Quantidade, Cpf, FormaPagamento, Parcelas, Original_CodVenda, Original_Item, Original_PrecoTotal, Original_Quantidade, Original_Cpf, Original_FormaPagamento, Original_Parcelas, Original_CodVenda);
         }
         
@@ -1370,7 +1369,7 @@ SELECT CodVenda, Item, PrecoTotal, Quantidade, Cpf, FormaPagamento, Parcelas FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int inserirVenda(string Item, string PrecoTotal, global::System.Nullable<int> Quantidade, string Cpf, string FormaPagamento, global::System.Nullable<int> Parcelas) {
+        public virtual int inserirVenda(string Item, global::System.Nullable<decimal> PrecoTotal, global::System.Nullable<int> Quantidade, string Cpf, string FormaPagamento, global::System.Nullable<int> Parcelas) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             if ((Item == null)) {
                 command.Parameters[1].Value = global::System.DBNull.Value;
@@ -1378,11 +1377,11 @@ SELECT CodVenda, Item, PrecoTotal, Quantidade, Cpf, FormaPagamento, Parcelas FRO
             else {
                 command.Parameters[1].Value = ((string)(Item));
             }
-            if ((PrecoTotal == null)) {
-                command.Parameters[2].Value = global::System.DBNull.Value;
+            if ((PrecoTotal.HasValue == true)) {
+                command.Parameters[2].Value = ((decimal)(PrecoTotal.Value));
             }
             else {
-                command.Parameters[2].Value = ((string)(PrecoTotal));
+                command.Parameters[2].Value = global::System.DBNull.Value;
             }
             if ((Quantidade.HasValue == true)) {
                 command.Parameters[3].Value = ((int)(Quantidade.Value));

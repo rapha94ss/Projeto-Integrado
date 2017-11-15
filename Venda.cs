@@ -10,7 +10,7 @@ namespace WindowsFormsApp2
     {
         public int CodVenda { set; get; }
         public string ItemVendido { set; get; }
-        public float Preco { set; get; }
+        public decimal Preco { set; get; }
         public int Quantidade { set; get; }
         public string Cpf { set; get; }
         public string FormaPagamento { set; get; }

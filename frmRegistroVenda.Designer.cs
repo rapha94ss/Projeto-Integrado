@@ -30,35 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnVender = new System.Windows.Forms.Button();
-            this.mtbCpf = new System.Windows.Forms.MaskedTextBox();
-            this.txtQuantidade = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnCarrinho = new System.Windows.Forms.Button();
+            this.cboPreco = new System.Windows.Forms.ComboBox();
             this.estoqueBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.estoqueDataSet = new WindowsFormsApp2.estoqueDataSet();
+            this.lblCarrinho = new System.Windows.Forms.Label();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.cboItem = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.estoqueBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.bancodedadosDataSet2 = new WindowsFormsApp2.bancodedadosDataSet2();
-            this.bancodedadosDataSet1 = new WindowsFormsApp2.bancodedadosDataSet1();
-            this.estoqueBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.estoqueTableAdapter = new WindowsFormsApp2.bancodedadosDataSet1TableAdapters.EstoqueTableAdapter();
-            this.estoqueTableAdapter1 = new WindowsFormsApp2.bancodedadosDataSet2TableAdapters.EstoqueTableAdapter();
-            this.estoqueTableAdapter2 = new WindowsFormsApp2.estoqueDataSetTableAdapters.EstoqueTableAdapter();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cboFormaPagamento = new System.Windows.Forms.ComboBox();
-            this.cboParcelas = new System.Windows.Forms.ComboBox();
-            this.cboPreco = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblPrecoFinal = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.vendasDataSet = new WindowsFormsApp2.vendasDataSet();
-            this.vendasDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vendaTableAdapter = new WindowsFormsApp2.vendasDataSetTableAdapters.VendaTableAdapter();
             this.codVendaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precoTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,204 +49,75 @@
             this.cpfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.formaPagamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.parcelasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vendasDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vendasDataSet = new WindowsFormsApp2.vendasDataSet();
+            this.lblPrecoFinal = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cboParcelas = new System.Windows.Forms.ComboBox();
+            this.cboFormaPagamento = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnVender = new System.Windows.Forms.Button();
+            this.mtbCpf = new System.Windows.Forms.MaskedTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.estoqueBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bancodedadosDataSet2 = new WindowsFormsApp2.bancodedadosDataSet2();
+            this.bancodedadosDataSet1 = new WindowsFormsApp2.bancodedadosDataSet1();
+            this.estoqueBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.estoqueTableAdapter = new WindowsFormsApp2.bancodedadosDataSet1TableAdapters.EstoqueTableAdapter();
+            this.estoqueTableAdapter1 = new WindowsFormsApp2.bancodedadosDataSet2TableAdapters.EstoqueTableAdapter();
+            this.estoqueTableAdapter2 = new WindowsFormsApp2.estoqueDataSetTableAdapters.EstoqueTableAdapter();
+            this.vendaTableAdapter = new WindowsFormsApp2.vendasDataSetTableAdapters.VendaTableAdapter();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.DataGridCarrinho = new System.Windows.Forms.DataGridView();
+            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Preço = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnLimparCarrinho = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estoqueDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendasDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendasDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bancodedadosDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bancodedadosDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vendasDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vendasDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridCarrinho)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.lblPrecoFinal);
-            this.panel1.Controls.Add(this.label7);
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnCarrinho);
             this.panel1.Controls.Add(this.cboPreco);
-            this.panel1.Controls.Add(this.cboParcelas);
-            this.panel1.Controls.Add(this.cboFormaPagamento);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.btnVender);
-            this.panel1.Controls.Add(this.mtbCpf);
+            this.panel1.Controls.Add(this.lblCarrinho);
             this.panel1.Controls.Add(this.txtQuantidade);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cboItem);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(42, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 25);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(554, 359);
+            this.panel1.Size = new System.Drawing.Size(484, 181);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // btnVender
+            // btnCarrinho
             // 
-            this.btnVender.Location = new System.Drawing.Point(45, 279);
-            this.btnVender.Name = "btnVender";
-            this.btnVender.Size = new System.Drawing.Size(112, 23);
-            this.btnVender.TabIndex = 7;
-            this.btnVender.Text = "Registrar Venda";
-            this.btnVender.UseVisualStyleBackColor = true;
-            this.btnVender.Click += new System.EventHandler(this.btnVender_Click);
-            // 
-            // mtbCpf
-            // 
-            this.mtbCpf.Location = new System.Drawing.Point(73, 145);
-            this.mtbCpf.Mask = "99999999999";
-            this.mtbCpf.Name = "mtbCpf";
-            this.mtbCpf.Size = new System.Drawing.Size(100, 20);
-            this.mtbCpf.TabIndex = 4;
-            // 
-            // txtQuantidade
-            // 
-            this.txtQuantidade.Location = new System.Drawing.Point(84, 100);
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(73, 20);
-            this.txtQuantidade.TabIndex = 3;
-            this.txtQuantidade.TextChanged += new System.EventHandler(this.txtQuantidade_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 148);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "CPF: ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 103);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Quantidade: ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Preço: ";
-            // 
-            // estoqueBindingSource2
-            // 
-            this.estoqueBindingSource2.DataMember = "Estoque";
-            this.estoqueBindingSource2.DataSource = this.estoqueDataSet;
-            // 
-            // estoqueDataSet
-            // 
-            this.estoqueDataSet.DataSetName = "estoqueDataSet";
-            this.estoqueDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cboItem
-            // 
-            this.cboItem.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.estoqueBindingSource2, "Preco", true));
-            this.cboItem.DataSource = this.estoqueBindingSource2;
-            this.cboItem.DisplayMember = "Descricao";
-            this.cboItem.FormattingEnabled = true;
-            this.cboItem.Location = new System.Drawing.Point(73, 17);
-            this.cboItem.Name = "cboItem";
-            this.cboItem.Size = new System.Drawing.Size(200, 21);
-            this.cboItem.TabIndex = 1;
-            this.cboItem.ValueMember = "CodProduto";
-            this.cboItem.SelectedIndexChanged += new System.EventHandler(this.cboItem_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Item: ";
-            // 
-            // estoqueBindingSource1
-            // 
-            this.estoqueBindingSource1.DataMember = "Estoque";
-            this.estoqueBindingSource1.DataSource = this.bancodedadosDataSet2;
-            // 
-            // bancodedadosDataSet2
-            // 
-            this.bancodedadosDataSet2.DataSetName = "bancodedadosDataSet2";
-            this.bancodedadosDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bancodedadosDataSet1
-            // 
-            this.bancodedadosDataSet1.DataSetName = "bancodedadosDataSet1";
-            this.bancodedadosDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // estoqueBindingSource
-            // 
-            this.estoqueBindingSource.DataMember = "Estoque";
-            this.estoqueBindingSource.DataSource = this.bancodedadosDataSet1;
-            // 
-            // estoqueTableAdapter
-            // 
-            this.estoqueTableAdapter.ClearBeforeFill = true;
-            // 
-            // estoqueTableAdapter1
-            // 
-            this.estoqueTableAdapter1.ClearBeforeFill = true;
-            // 
-            // estoqueTableAdapter2
-            // 
-            this.estoqueTableAdapter2.ClearBeforeFill = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 187);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(114, 13);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Forma de Pagamento: ";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 231);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 13);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Parcelas: ";
-            // 
-            // cboFormaPagamento
-            // 
-            this.cboFormaPagamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboFormaPagamento.FormattingEnabled = true;
-            this.cboFormaPagamento.Items.AddRange(new object[] {
-            "Débito",
-            "Crédito",
-            "Dinheiro",
-            "Bitcoin"});
-            this.cboFormaPagamento.Location = new System.Drawing.Point(127, 184);
-            this.cboFormaPagamento.Name = "cboFormaPagamento";
-            this.cboFormaPagamento.Size = new System.Drawing.Size(121, 21);
-            this.cboFormaPagamento.TabIndex = 5;
-            // 
-            // cboParcelas
-            // 
-            this.cboParcelas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboParcelas.FormattingEnabled = true;
-            this.cboParcelas.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4"});
-            this.cboParcelas.Location = new System.Drawing.Point(73, 228);
-            this.cboParcelas.Name = "cboParcelas";
-            this.cboParcelas.Size = new System.Drawing.Size(121, 21);
-            this.cboParcelas.TabIndex = 6;
+            this.btnCarrinho.Location = new System.Drawing.Point(121, 142);
+            this.btnCarrinho.Name = "btnCarrinho";
+            this.btnCarrinho.Size = new System.Drawing.Size(128, 23);
+            this.btnCarrinho.TabIndex = 7;
+            this.btnCarrinho.Text = "Adicionar ao Carrinho";
+            this.btnCarrinho.UseVisualStyleBackColor = true;
+            this.btnCarrinho.Click += new System.EventHandler(this.btnCarrinho_Click);
             // 
             // cboPreco
             // 
@@ -275,27 +129,85 @@
             this.cboPreco.Name = "cboPreco";
             this.cboPreco.Size = new System.Drawing.Size(121, 21);
             this.cboPreco.TabIndex = 2;
-            this.cboPreco.ValueMember = "CodProduto";
+            this.cboPreco.ValueMember = "Descricao";
             // 
-            // label7
+            // estoqueBindingSource2
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(240, 104);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(135, 16);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "TOTAL À PAGAR: ";
+            this.estoqueBindingSource2.DataMember = "Estoque";
+            this.estoqueBindingSource2.DataSource = this.estoqueDataSet;
             // 
-            // lblPrecoFinal
+            // estoqueDataSet
             // 
-            this.lblPrecoFinal.AutoSize = true;
-            this.lblPrecoFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecoFinal.Location = new System.Drawing.Point(382, 104);
-            this.lblPrecoFinal.Name = "lblPrecoFinal";
-            this.lblPrecoFinal.Size = new System.Drawing.Size(23, 16);
-            this.lblPrecoFinal.TabIndex = 19;
-            this.lblPrecoFinal.Text = "---";
+            this.estoqueDataSet.DataSetName = "estoqueDataSet";
+            this.estoqueDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lblCarrinho
+            // 
+            this.lblCarrinho.AutoSize = true;
+            this.lblCarrinho.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCarrinho.Location = new System.Drawing.Point(425, 82);
+            this.lblCarrinho.Name = "lblCarrinho";
+            this.lblCarrinho.Size = new System.Drawing.Size(14, 15);
+            this.lblCarrinho.TabIndex = 22;
+            this.lblCarrinho.Text = "0";
+            // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.Location = new System.Drawing.Point(84, 100);
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(73, 20);
+            this.txtQuantidade.TabIndex = 3;
+            this.txtQuantidade.TextChanged += new System.EventHandler(this.txtQuantidade_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(19, 103);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Quantidade: ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(326, 82);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(104, 15);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Itens no carrinho: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 60);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Preço: ";
+            // 
+            // cboItem
+            // 
+            this.cboItem.DataSource = this.estoqueBindingSource2;
+            this.cboItem.DisplayMember = "Descricao";
+            this.cboItem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboItem.FormattingEnabled = true;
+            this.cboItem.Location = new System.Drawing.Point(73, 17);
+            this.cboItem.Name = "cboItem";
+            this.cboItem.Size = new System.Drawing.Size(200, 21);
+            this.cboItem.TabIndex = 1;
+            this.cboItem.ValueMember = "Preco";
+            this.cboItem.SelectedIndexChanged += new System.EventHandler(this.cboItem_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Item: ";
             // 
             // dataGridView1
             // 
@@ -310,30 +222,11 @@
             this.formaPagamentoDataGridViewTextBoxColumn,
             this.parcelasDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.vendaBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(340, 255);
+            this.dataGridView1.Location = new System.Drawing.Point(305, 103);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(161, 63);
             this.dataGridView1.TabIndex = 20;
             this.dataGridView1.Visible = false;
-            // 
-            // vendasDataSet
-            // 
-            this.vendasDataSet.DataSetName = "vendasDataSet";
-            this.vendasDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vendasDataSetBindingSource
-            // 
-            this.vendasDataSetBindingSource.DataSource = this.vendasDataSet;
-            this.vendasDataSetBindingSource.Position = 0;
-            // 
-            // vendaBindingSource
-            // 
-            this.vendaBindingSource.DataMember = "Venda";
-            this.vendaBindingSource.DataSource = this.vendasDataSetBindingSource;
-            // 
-            // vendaTableAdapter
-            // 
-            this.vendaTableAdapter.ClearBeforeFill = true;
             // 
             // codVendaDataGridViewTextBoxColumn
             // 
@@ -378,11 +271,232 @@
             this.parcelasDataGridViewTextBoxColumn.HeaderText = "Parcelas";
             this.parcelasDataGridViewTextBoxColumn.Name = "parcelasDataGridViewTextBoxColumn";
             // 
+            // vendaBindingSource
+            // 
+            this.vendaBindingSource.DataMember = "Venda";
+            this.vendaBindingSource.DataSource = this.vendasDataSetBindingSource;
+            // 
+            // vendasDataSetBindingSource
+            // 
+            this.vendasDataSetBindingSource.DataSource = this.vendasDataSet;
+            this.vendasDataSetBindingSource.Position = 0;
+            // 
+            // vendasDataSet
+            // 
+            this.vendasDataSet.DataSetName = "vendasDataSet";
+            this.vendasDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lblPrecoFinal
+            // 
+            this.lblPrecoFinal.AutoSize = true;
+            this.lblPrecoFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecoFinal.Location = new System.Drawing.Point(427, 24);
+            this.lblPrecoFinal.Name = "lblPrecoFinal";
+            this.lblPrecoFinal.Size = new System.Drawing.Size(13, 20);
+            this.lblPrecoFinal.TabIndex = 19;
+            this.lblPrecoFinal.Text = "0";
+            this.lblPrecoFinal.UseCompatibleTextRendering = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(251, 24);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(135, 16);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "TOTAL À PAGAR: ";
+            // 
+            // cboParcelas
+            // 
+            this.cboParcelas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboParcelas.FormattingEnabled = true;
+            this.cboParcelas.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.cboParcelas.Location = new System.Drawing.Point(73, 103);
+            this.cboParcelas.Name = "cboParcelas";
+            this.cboParcelas.Size = new System.Drawing.Size(121, 21);
+            this.cboParcelas.TabIndex = 6;
+            // 
+            // cboFormaPagamento
+            // 
+            this.cboFormaPagamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFormaPagamento.FormattingEnabled = true;
+            this.cboFormaPagamento.Items.AddRange(new object[] {
+            "Débito",
+            "Crédito",
+            "Dinheiro",
+            "Bitcoin"});
+            this.cboFormaPagamento.Location = new System.Drawing.Point(136, 59);
+            this.cboFormaPagamento.Name = "cboFormaPagamento";
+            this.cboFormaPagamento.Size = new System.Drawing.Size(121, 21);
+            this.cboFormaPagamento.TabIndex = 5;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(19, 106);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(54, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Parcelas: ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 62);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(114, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Forma de Pagamento: ";
+            // 
+            // btnVender
+            // 
+            this.btnVender.Location = new System.Drawing.Point(127, 149);
+            this.btnVender.Name = "btnVender";
+            this.btnVender.Size = new System.Drawing.Size(112, 23);
+            this.btnVender.TabIndex = 8;
+            this.btnVender.Text = "Registrar Venda";
+            this.btnVender.UseVisualStyleBackColor = true;
+            this.btnVender.Click += new System.EventHandler(this.btnVender_Click);
+            // 
+            // mtbCpf
+            // 
+            this.mtbCpf.Location = new System.Drawing.Point(73, 20);
+            this.mtbCpf.Mask = "99999999999";
+            this.mtbCpf.Name = "mtbCpf";
+            this.mtbCpf.Size = new System.Drawing.Size(100, 20);
+            this.mtbCpf.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(19, 23);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(33, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "CPF: ";
+            // 
+            // estoqueBindingSource1
+            // 
+            this.estoqueBindingSource1.DataMember = "Estoque";
+            this.estoqueBindingSource1.DataSource = this.bancodedadosDataSet2;
+            // 
+            // bancodedadosDataSet2
+            // 
+            this.bancodedadosDataSet2.DataSetName = "bancodedadosDataSet2";
+            this.bancodedadosDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bancodedadosDataSet1
+            // 
+            this.bancodedadosDataSet1.DataSetName = "bancodedadosDataSet1";
+            this.bancodedadosDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // estoqueBindingSource
+            // 
+            this.estoqueBindingSource.DataMember = "Estoque";
+            this.estoqueBindingSource.DataSource = this.bancodedadosDataSet1;
+            // 
+            // estoqueTableAdapter
+            // 
+            this.estoqueTableAdapter.ClearBeforeFill = true;
+            // 
+            // estoqueTableAdapter1
+            // 
+            this.estoqueTableAdapter1.ClearBeforeFill = true;
+            // 
+            // estoqueTableAdapter2
+            // 
+            this.estoqueTableAdapter2.ClearBeforeFill = true;
+            // 
+            // vendaTableAdapter
+            // 
+            this.vendaTableAdapter.ClearBeforeFill = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(392, 24);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(27, 16);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "R$";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.mtbCpf);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.cboParcelas);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.cboFormaPagamento);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.lblPrecoFinal);
+            this.panel2.Controls.Add(this.btnVender);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Location = new System.Drawing.Point(12, 221);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(484, 187);
+            this.panel2.TabIndex = 24;
+            // 
+            // DataGridCarrinho
+            // 
+            this.DataGridCarrinho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridCarrinho.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Item,
+            this.Preço});
+            this.DataGridCarrinho.Location = new System.Drawing.Point(520, 56);
+            this.DataGridCarrinho.Name = "DataGridCarrinho";
+            this.DataGridCarrinho.Size = new System.Drawing.Size(241, 150);
+            this.DataGridCarrinho.TabIndex = 25;
+            this.DataGridCarrinho.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DataGridCarrinho_RowsRemoved);
+            // 
+            // Item
+            // 
+            this.Item.HeaderText = "Item";
+            this.Item.Name = "Item";
+            // 
+            // Preço
+            // 
+            this.Preço.HeaderText = "Preço";
+            this.Preço.Name = "Preço";
+            // 
+            // btnLimparCarrinho
+            // 
+            this.btnLimparCarrinho.Location = new System.Drawing.Point(583, 243);
+            this.btnLimparCarrinho.Name = "btnLimparCarrinho";
+            this.btnLimparCarrinho.Size = new System.Drawing.Size(124, 23);
+            this.btnLimparCarrinho.TabIndex = 26;
+            this.btnLimparCarrinho.Text = "Limpar Carrinho";
+            this.btnLimparCarrinho.UseVisualStyleBackColor = true;
+            this.btnLimparCarrinho.Click += new System.EventHandler(this.btnLimparCarrinho_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(531, 25);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(123, 15);
+            this.label10.TabIndex = 27;
+            this.label10.Text = "Itens no carrinho: ";
+            // 
             // frmRegistroVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(646, 395);
+            this.ClientSize = new System.Drawing.Size(773, 432);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.btnLimparCarrinho);
+            this.Controls.Add(this.DataGridCarrinho);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmRegistroVenda";
             this.Text = "frmRegistroVenda";
@@ -391,15 +505,19 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estoqueDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendasDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendasDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bancodedadosDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bancodedadosDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vendasDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vendasDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridCarrinho)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -442,5 +560,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cpfDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn formaPagamentoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn parcelasDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnCarrinho;
+        private System.Windows.Forms.Label lblCarrinho;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView DataGridCarrinho;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Item;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Preço;
+        private System.Windows.Forms.Button btnLimparCarrinho;
+        private System.Windows.Forms.Label label10;
     }
 }

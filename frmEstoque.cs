@@ -46,11 +46,7 @@ namespace WindowsFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (txtCodProduto.Text == "")
-            {
-                MessageBox.Show("Ops, preencha o campo de CÓDIGO do produto", "IHH Rapai", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else if (txtDescricao.Text == "")
+            if (txtDescricao.Text == "")
             {
                 MessageBox.Show("Ops, preencha o campo DESCRICAO do produto", "IHH Rapai", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -104,7 +100,7 @@ namespace WindowsFormsApp2
                 Estoque estoque = montaEstoque();
                 string mensagem = new EstoqueDAO().editarEstoque(estoque, Convert.ToInt32(txtCodProduto.Text));
                 MessageBox.Show(mensagem, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.estoqueTableAdapter.editarEstoque(txtDescricao.Text, Convert.ToInt32(txtQuantidade.Text), cboTipoProduto.Text, txtPrecoUnitario.Text, Convert.ToInt32(txtCodProduto.Text));
+                this.estoqueTableAdapter.editarEstoque(txtDescricao.Text, Convert.ToInt32(txtQuantidade.Text), cboTipoProduto.Text, float.Parse(txtPrecoUnitario.Text), Convert.ToInt32(txtCodProduto.Text));
                 this.estoqueTableAdapter.Fill(this.estoqueDataSet1.Estoque);
                 limpaCampos();
             }
@@ -132,6 +128,11 @@ namespace WindowsFormsApp2
             txtQuantidade.Text = dataGridView1.SelectedCells[2].Value.ToString();
             cboTipoProduto.Text = dataGridView1.SelectedCells[3].Value.ToString();
             txtPrecoUnitario.Text = dataGridView1.SelectedCells[4].Value.ToString();
+        }
+
+        private void dataGridView1_CellContentClick (object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

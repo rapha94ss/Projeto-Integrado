@@ -43,6 +43,10 @@ namespace WindowsFormsApp2
             {
                 resp = "Erro" + ex.ToString();
             }
+            catch (NullReferenceException ex)
+            {
+               
+            }
             return resp;
         }
         
