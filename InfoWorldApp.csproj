@@ -47,6 +47,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>LogoFactory.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -83,15 +86,36 @@
     <Compile Include="Conecta.cs" />
     <Compile Include="Estoque.cs" />
     <Compile Include="EstoqueDAO.cs" />
-    <Compile Include="estoqueDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>estoqueDataSet.xsd</DependentUpon>
+    <Compile Include="EstoqueDataSet1.cs">
+      <DependentUpon>EstoqueDataSet1.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="EstoqueDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EstoqueDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EstoqueDefDataSet.cs">
+      <DependentUpon>EstoqueDefDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EstoqueDefDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstoqueDefDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Fornecedor.cs" />
+    <Compile Include="FornecedorDAO.cs" />
+    <Compile Include="FornecedorEstoqueDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FornecedorEstoqueDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlterarSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlterarSenha.Designer.cs">
+      <DependentUpon>frmAlterarSenha.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCliente.cs">
       <SubType>Form</SubType>
@@ -104,6 +128,12 @@
     </Compile>
     <Compile Include="frmEstoque.Designer.cs">
       <DependentUpon>frmEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFornecedor.Designer.cs">
+      <DependentUpon>frmFornecedor.cs</DependentUpon>
     </Compile>
     <Compile Include="frmFornecerAcesso.cs">
       <SubType>Form</SubType>
@@ -140,6 +170,12 @@
     </Compile>
     <Compile Include="frmMenuPrincipal.Designer.cs">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecuperarSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecuperarSenha.Designer.cs">
+      <DependentUpon>frmRecuperarSenha.cs</DependentUpon>
     </Compile>
     <Compile Include="frmRegistroVenda.cs">
       <SubType>Form</SubType>
@@ -183,16 +219,35 @@
     </Compile>
     <Compile Include="Venda.cs" />
     <Compile Include="VendaDAO.cs" />
+    <Compile Include="VendaEstoqueDataSet.cs">
+      <DependentUpon>VendaEstoqueDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VendaEstoqueDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VendaEstoqueDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="vendasDataSet.cs">
+      <DependentUpon>vendasDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="vendasDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>vendasDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmAlterarSenha.resx">
+      <DependentUpon>frmAlterarSenha.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCliente.resx">
       <DependentUpon>frmCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEstoque.resx">
       <DependentUpon>frmEstoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFornecedor.resx">
+      <DependentUpon>frmFornecedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFornecerAcesso.resx">
       <DependentUpon>frmFornecerAcesso.cs</DependentUpon>
@@ -211,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecuperarSenha.resx">
+      <DependentUpon>frmRecuperarSenha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegistroVenda.resx">
       <DependentUpon>frmRegistroVenda.cs</DependentUpon>
@@ -261,17 +319,6 @@
     <None Include="bancodedadosDataSet2.xss">
       <DependentUpon>bancodedadosDataSet2.xsd</DependentUpon>
     </None>
-    <None Include="estoqueDataSet.xsc">
-      <DependentUpon>estoqueDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="estoqueDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>estoqueDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="estoqueDataSet.xss">
-      <DependentUpon>estoqueDataSet.xsd</DependentUpon>
-    </None>
     <None Include="EstoqueDataSet1.xsc">
       <DependentUpon>EstoqueDataSet1.xsd</DependentUpon>
     </None>
@@ -282,6 +329,28 @@
     </None>
     <None Include="EstoqueDataSet1.xss">
       <DependentUpon>EstoqueDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="EstoqueDefDataSet.xsc">
+      <DependentUpon>EstoqueDefDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EstoqueDefDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EstoqueDefDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EstoqueDefDataSet.xss">
+      <DependentUpon>EstoqueDefDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FornecedorEstoqueDataSet.xsc">
+      <DependentUpon>FornecedorEstoqueDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FornecedorEstoqueDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FornecedorEstoqueDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FornecedorEstoqueDataSet.xss">
+      <DependentUpon>FornecedorEstoqueDataSet.xsd</DependentUpon>
     </None>
     <None Include="manutencaoDataSet.xsc">
       <DependentUpon>manutencaoDataSet.xsd</DependentUpon>
@@ -463,6 +532,17 @@
     <None Include="Service References\WSCorreios\WindowsFormsApp2.WSCorreios.VerificaSeTodosObjetosCanceladosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="VendaEstoqueDataSet.xsc">
+      <DependentUpon>VendaEstoqueDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="VendaEstoqueDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VendaEstoqueDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="VendaEstoqueDataSet.xss">
+      <DependentUpon>VendaEstoqueDataSet.xsd</DependentUpon>
+    </None>
     <None Include="vendasDataSet.xsc">
       <DependentUpon>vendasDataSet.xsd</DependentUpon>
     </None>
@@ -486,6 +566,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>bancodedados.mdf</DependentUpon>
     </Content>
+    <Content Include="LogoFactory.ico" />
     <None Include="Service References\WSCorreios\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

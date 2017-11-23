@@ -17,7 +17,7 @@ namespace WindowsFormsApp2
             try
             {
                 SqlConnection conexao = Conecta.getConexao();
-                sql = "INSERT INTO Estoque (descricao, quantidade, tipoproduto, preco) VALUES (@descricao, @quantidade, @tipoproduto, @preco)";
+                sql = "INSERT INTO Estoque (descricao, quantidade, tipoproduto, preco, fornecedor) VALUES (@descricao, @quantidade, @tipoproduto, @preco, @fornecedor)";
 
                 SqlCommand cmd = conexao.CreateCommand();
                 cmd.CommandText = sql;
@@ -25,11 +25,12 @@ namespace WindowsFormsApp2
                 cmd.Parameters.AddWithValue("@quantidade", Convert.ToInt32(estoque.Quantidade));
                 cmd.Parameters.AddWithValue("@tipoproduto", estoque.TipoProduto);
                 cmd.Parameters.AddWithValue("@preco", estoque.PrecoUnitario);
+                cmd.Parameters.AddWithValue("@fornecedor", estoque.PrecoUnitario);
 
                 retorno = cmd.ExecuteNonQuery();
                 if (retorno > 0)
                 {
-                    resp = "Cadastro efetuado";
+                    resp = "Produto em estoque salvo";
                 }
                 else
                 {
@@ -53,7 +54,7 @@ namespace WindowsFormsApp2
             try
             {
                 SqlConnection conexao = Conecta.getConexao();
-                sql = "UPDATE Estoque SET Descricao=@descricao, quantidade=@quantidade, tipoProduto=@tipoProduto, preco=@preco WHERE codProduto=@codProduto";
+                sql = "UPDATE Estoque SET Descricao=@descricao, quantidade=@quantidade, tipoProduto=@tipoProduto, preco=@preco, fornecedor=@fornecedor WHERE codProduto=@codProduto";
 
                 SqlCommand cmd = conexao.CreateCommand();
                 cmd.CommandText = sql;
@@ -62,6 +63,7 @@ namespace WindowsFormsApp2
                 cmd.Parameters.AddWithValue("@tipoProduto", estoque.TipoProduto);
                 cmd.Parameters.AddWithValue("@codProduto", codProduto);
                 cmd.Parameters.AddWithValue("@preco", estoque.PrecoUnitario);
+                cmd.Parameters.AddWithValue("@fornecedor", estoque.PrecoUnitario);
 
 
                 retorno = cmd.ExecuteNonQuery();

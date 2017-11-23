@@ -39,6 +39,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnFechar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -102,7 +103,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(291, 35);
+            this.pictureBox1.Location = new System.Drawing.Point(290, 55);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(291, 266);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -134,6 +135,7 @@
             // panel1
             // 
             this.panel1.AccessibleDescription = "Acesso";
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtUsuario);
@@ -144,19 +146,34 @@
             this.panel1.Size = new System.Drawing.Size(200, 153);
             this.panel1.TabIndex = 9;
             // 
+            // btnFechar
+            // 
+            this.btnFechar.Location = new System.Drawing.Point(518, 12);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(75, 23);
+            this.btnFechar.TabIndex = 10;
+            this.btnFechar.Text = "Fechar";
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(605, 372);
+            this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GIW";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLogin_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmLogin_FormClosed);
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -178,6 +195,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnFechar;
     }
 }
 

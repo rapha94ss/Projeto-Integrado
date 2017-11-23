@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFuncionario));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -57,6 +58,7 @@
             // 
             this.panel1.AccessibleDescription = "Cadastro de Funcionários";
             this.panel1.AccessibleName = "Cadastro de Funcionários";
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btnExcluir);
             this.panel1.Controls.Add(this.btnEditar);
             this.panel1.Controls.Add(this.btnConsultar);
@@ -77,7 +79,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(28, 43);
+            this.panel1.Location = new System.Drawing.Point(27, 27);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(551, 278);
             this.panel1.TabIndex = 0;
@@ -275,6 +277,7 @@
             this.ClientSize = new System.Drawing.Size(605, 372);
             this.Controls.Add(this.btnFornecerAcesso);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmFuncionario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de funcionário";

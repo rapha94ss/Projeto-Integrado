@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -46,7 +47,34 @@ namespace WindowsFormsApp2
 
         private void label4_Click(object sender, EventArgs e)
         {
+            frmRecuperarSenha recupera = new frmRecuperarSenha();
+            recupera.Show();
+        }
 
+        private void frmLogin_FormClosed (object sender, FormClosedEventArgs e)
+        {
+            /*this.Close();
+            Process p = Process.GetCurrentProcess();
+            p.Kill();*/
+        }
+
+        private void frmLogin_FormClosing (object sender, FormClosingEventArgs e)
+        {
+            //this.Close();
+            Process p = Process.GetCurrentProcess();
+            p.Kill();
+        }
+
+        private void frmLogin_Load (object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFechar_Click (object sender, EventArgs e)
+        {
+            //this.Close();
+            Process p = Process.GetCurrentProcess();
+            p.Kill();
         }
     }
 }

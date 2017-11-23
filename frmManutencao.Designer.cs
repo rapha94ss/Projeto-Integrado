@@ -29,6 +29,7 @@
         private void InitializeComponent ()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManutencao));
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtCodManutencao = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -357,8 +358,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(738, 510);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmManutencao";
-            this.Text = "frmManutencao";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Manutencao";
             this.Load += new System.EventHandler(this.frmManutencao_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

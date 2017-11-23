@@ -29,10 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEstoque));
             this.bancodedadosDataSet = new WindowsFormsApp2.bancodedadosDataSet();
             this.funcionariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.funcionariosTableAdapter = new WindowsFormsApp2.bancodedadosDataSetTableAdapters.FuncionariosTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAtualizarEstoque = new System.Windows.Forms.Button();
+            this.cboFornecedor = new System.Windows.Forms.ComboBox();
+            this.fornecedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fornecedorEstoqueDataSet = new WindowsFormsApp2.FornecedorEstoqueDataSet();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtPrecoUnitario = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,9 +50,11 @@
             this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoProdutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estoqueBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.estoqueDataSet1 = new WindowsFormsApp2.EstoqueDataSet1();
+            this.precoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estoqueBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.vendaEstoqueDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vendaEstoqueDataSet = new WindowsFormsApp2.VendaEstoqueDataSet();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.cboTipoProduto = new System.Windows.Forms.ComboBox();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
@@ -54,11 +62,22 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.estoqueBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.estoqueBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.estoqueDataSet1 = new WindowsFormsApp2.EstoqueDataSet1();
             this.estoqueTableAdapter = new WindowsFormsApp2.EstoqueDataSet1TableAdapters.EstoqueTableAdapter();
+            this.estoqueTableAdapter1 = new WindowsFormsApp2.VendaEstoqueDataSetTableAdapters.EstoqueTableAdapter();
+            this.fornecedorTableAdapter = new WindowsFormsApp2.FornecedorEstoqueDataSetTableAdapters.FornecedorTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bancodedadosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcionariosBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fornecedorEstoqueDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendaEstoqueDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendaEstoqueDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estoqueDataSet1)).BeginInit();
             this.SuspendLayout();
@@ -79,6 +98,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnAtualizarEstoque);
+            this.panel1.Controls.Add(this.cboFornecedor);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txtPrecoUnitario);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -95,8 +117,53 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(679, 417);
+            this.panel1.Size = new System.Drawing.Size(679, 442);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
+            this.panel1.MouseHover += new System.EventHandler(this.panel1_MouseHover);
+            // 
+            // btnAtualizarEstoque
+            // 
+            this.btnAtualizarEstoque.Location = new System.Drawing.Point(529, 234);
+            this.btnAtualizarEstoque.Name = "btnAtualizarEstoque";
+            this.btnAtualizarEstoque.Size = new System.Drawing.Size(75, 23);
+            this.btnAtualizarEstoque.TabIndex = 16;
+            this.btnAtualizarEstoque.Text = "Atualizar Estoque";
+            this.btnAtualizarEstoque.UseVisualStyleBackColor = true;
+            this.btnAtualizarEstoque.Visible = false;
+            this.btnAtualizarEstoque.Click += new System.EventHandler(this.btnAtualizarEstoque_Click);
+            // 
+            // cboFornecedor
+            // 
+            this.cboFornecedor.DataSource = this.fornecedorBindingSource;
+            this.cboFornecedor.DisplayMember = "Nome";
+            this.cboFornecedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFornecedor.FormattingEnabled = true;
+            this.cboFornecedor.Location = new System.Drawing.Point(100, 162);
+            this.cboFornecedor.Name = "cboFornecedor";
+            this.cboFornecedor.Size = new System.Drawing.Size(221, 21);
+            this.cboFornecedor.TabIndex = 15;
+            this.cboFornecedor.ValueMember = "Cod_fornecedor";
+            // 
+            // fornecedorBindingSource
+            // 
+            this.fornecedorBindingSource.DataMember = "Fornecedor";
+            this.fornecedorBindingSource.DataSource = this.fornecedorEstoqueDataSet;
+            // 
+            // fornecedorEstoqueDataSet
+            // 
+            this.fornecedorEstoqueDataSet.DataSetName = "FornecedorEstoqueDataSet";
+            this.fornecedorEstoqueDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(27, 165);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 13);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Fornecedor: ";
             // 
             // txtPrecoUnitario
             // 
@@ -117,7 +184,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(124, 171);
+            this.label4.Location = new System.Drawing.Point(124, 216);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(293, 13);
             this.label4.TabIndex = 11;
@@ -127,7 +194,7 @@
             // 
             // txtCodProduto
             // 
-            this.txtCodProduto.Location = new System.Drawing.Point(434, 167);
+            this.txtCodProduto.Location = new System.Drawing.Point(423, 213);
             this.txtCodProduto.Name = "txtCodProduto";
             this.txtCodProduto.Size = new System.Drawing.Size(57, 20);
             this.txtCodProduto.TabIndex = 5;
@@ -149,7 +216,7 @@
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 6;
-            this.btnEditar.Text = "Editar";
+            this.btnEditar.Text = "Atualizar";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
@@ -164,12 +231,13 @@
             this.descricaoDataGridViewTextBoxColumn,
             this.quantidadeDataGridViewTextBoxColumn,
             this.tipoProdutoDataGridViewTextBoxColumn,
-            this.Preco});
-            this.dataGridView1.DataSource = this.estoqueBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 223);
+            this.precoDataGridViewTextBoxColumn,
+            this.Fornecedor});
+            this.dataGridView1.DataSource = this.estoqueBindingSource2;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 268);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(632, 162);
+            this.dataGridView1.Size = new System.Drawing.Size(656, 162);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -177,10 +245,10 @@
             // codProdutoDataGridViewTextBoxColumn
             // 
             this.codProdutoDataGridViewTextBoxColumn.DataPropertyName = "CodProduto";
-            this.codProdutoDataGridViewTextBoxColumn.HeaderText = "CodProduto";
+            this.codProdutoDataGridViewTextBoxColumn.HeaderText = "ID";
             this.codProdutoDataGridViewTextBoxColumn.Name = "codProdutoDataGridViewTextBoxColumn";
             this.codProdutoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codProdutoDataGridViewTextBoxColumn.Width = 90;
+            this.codProdutoDataGridViewTextBoxColumn.Width = 60;
             // 
             // descricaoDataGridViewTextBoxColumn
             // 
@@ -188,7 +256,7 @@
             this.descricaoDataGridViewTextBoxColumn.HeaderText = "Descricao";
             this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
             this.descricaoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descricaoDataGridViewTextBoxColumn.Width = 150;
+            this.descricaoDataGridViewTextBoxColumn.Width = 120;
             // 
             // quantidadeDataGridViewTextBoxColumn
             // 
@@ -203,24 +271,35 @@
             this.tipoProdutoDataGridViewTextBoxColumn.HeaderText = "TipoProduto";
             this.tipoProdutoDataGridViewTextBoxColumn.Name = "tipoProdutoDataGridViewTextBoxColumn";
             this.tipoProdutoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tipoProdutoDataGridViewTextBoxColumn.Width = 150;
             // 
-            // Preco
+            // precoDataGridViewTextBoxColumn
             // 
-            this.Preco.DataPropertyName = "Preco";
-            this.Preco.HeaderText = "Preco";
-            this.Preco.Name = "Preco";
-            this.Preco.ReadOnly = true;
+            this.precoDataGridViewTextBoxColumn.DataPropertyName = "Preco";
+            this.precoDataGridViewTextBoxColumn.HeaderText = "Preco";
+            this.precoDataGridViewTextBoxColumn.Name = "precoDataGridViewTextBoxColumn";
+            this.precoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // estoqueBindingSource
+            // Fornecedor
             // 
-            this.estoqueBindingSource.DataMember = "Estoque";
-            this.estoqueBindingSource.DataSource = this.estoqueDataSet1;
+            this.Fornecedor.DataPropertyName = "Fornecedor";
+            this.Fornecedor.HeaderText = "Fornecedor";
+            this.Fornecedor.Name = "Fornecedor";
+            this.Fornecedor.ReadOnly = true;
             // 
-            // estoqueDataSet1
+            // estoqueBindingSource2
             // 
-            this.estoqueDataSet1.DataSetName = "EstoqueDataSet1";
-            this.estoqueDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.estoqueBindingSource2.DataMember = "Estoque";
+            this.estoqueBindingSource2.DataSource = this.vendaEstoqueDataSetBindingSource;
+            // 
+            // vendaEstoqueDataSetBindingSource
+            // 
+            this.vendaEstoqueDataSetBindingSource.DataSource = this.vendaEstoqueDataSet;
+            this.vendaEstoqueDataSetBindingSource.Position = 0;
+            // 
+            // vendaEstoqueDataSet
+            // 
+            this.vendaEstoqueDataSet.DataSetName = "VendaEstoqueDataSet";
+            this.vendaEstoqueDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnCadastrar
             // 
@@ -238,17 +317,19 @@
             this.cboTipoProduto.FormattingEnabled = true;
             this.cboTipoProduto.Items.AddRange(new object[] {
             "--Selecione--",
-            "Software",
-            "Monitor",
-            "Gabinete",
-            "Fone",
-            "Pen Drive",
-            "HD",
             "Capa de Celular",
-            "Película",
+            "Fone de  Ouvido",
+            "Gabinete",
+            "Headphone",
+            "HD",
+            "HD Externo",
+            "Monitor",
             "Mouse",
-            "Teclado",
-            "Peças de Manutenção"});
+            "Peças de Manutenção",
+            "Película",
+            "Pen Drive",
+            "Software",
+            "Teclado"});
             this.cboTipoProduto.Location = new System.Drawing.Point(120, 86);
             this.cboTipoProduto.Name = "cboTipoProduto";
             this.cboTipoProduto.Size = new System.Drawing.Size(121, 21);
@@ -295,24 +376,55 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Descrição: ";
             // 
+            // estoqueBindingSource1
+            // 
+            this.estoqueBindingSource1.DataMember = "Estoque";
+            this.estoqueBindingSource1.DataSource = this.vendaEstoqueDataSetBindingSource;
+            // 
+            // estoqueBindingSource
+            // 
+            this.estoqueBindingSource.DataMember = "Estoque";
+            this.estoqueBindingSource.DataSource = this.estoqueDataSet1;
+            // 
+            // estoqueDataSet1
+            // 
+            this.estoqueDataSet1.DataSetName = "EstoqueDataSet1";
+            this.estoqueDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // estoqueTableAdapter
             // 
             this.estoqueTableAdapter.ClearBeforeFill = true;
+            // 
+            // estoqueTableAdapter1
+            // 
+            this.estoqueTableAdapter1.ClearBeforeFill = true;
+            // 
+            // fornecedorTableAdapter
+            // 
+            this.fornecedorTableAdapter.ClearBeforeFill = true;
             // 
             // frmEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(703, 441);
+            this.ClientSize = new System.Drawing.Size(703, 477);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmEstoque";
-            this.Text = "frmEstoque";
+            this.Text = "Estoque";
             this.Load += new System.EventHandler(this.frmEstoque_Load);
+            this.Shown += new System.EventHandler(this.frmEstoque_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.bancodedadosDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcionariosBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fornecedorEstoqueDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendaEstoqueDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendaEstoqueDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estoqueDataSet1)).EndInit();
             this.ResumeLayout(false);
@@ -342,10 +454,22 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPrecoUnitario;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cboFornecedor;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnAtualizarEstoque;
+        private System.Windows.Forms.BindingSource vendaEstoqueDataSetBindingSource;
+        private VendaEstoqueDataSet vendaEstoqueDataSet;
+        private System.Windows.Forms.BindingSource estoqueBindingSource1;
+        private VendaEstoqueDataSetTableAdapters.EstoqueTableAdapter estoqueTableAdapter1;
+        private System.Windows.Forms.BindingSource estoqueBindingSource2;
+        private FornecedorEstoqueDataSet fornecedorEstoqueDataSet;
+        private System.Windows.Forms.BindingSource fornecedorBindingSource;
+        private FornecedorEstoqueDataSetTableAdapters.FornecedorTableAdapter fornecedorTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn codProdutoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantidadeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoProdutoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Preco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fornecedor;
     }
 }

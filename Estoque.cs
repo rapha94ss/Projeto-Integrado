@@ -12,6 +12,7 @@ namespace WindowsFormsApp2
         public string Descricao { set; get; }
         public int Quantidade { set; get; }
         public string TipoProduto { set; get; }
-        public float PrecoUnitario { set; get; }
+        public decimal PrecoUnitario { set; get; }
+        public string Fornecedor { set; get; }
     }
 }

@@ -19,6 +19,8 @@ namespace WindowsFormsApp2
 
         private void frmVendasRealizadas_Load (object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'vendaEstoqueDataSet.Venda' table. You can move, or remove it, as needed.
+            this.vendaTableAdapter1.Fill(this.vendaEstoqueDataSet.Venda);
             // TODO: This line of code loads data into the 'vendasDataSet.Venda' table. You can move, or remove it, as needed.
             this.vendaTableAdapter.Fill(this.vendasDataSet.Venda);
 

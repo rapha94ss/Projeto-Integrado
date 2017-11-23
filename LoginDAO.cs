@@ -43,6 +43,11 @@ namespace WindowsFormsApp2
             return resp;
         }
 
+        public bool verificaPermissao (string cpf)
+        {
+            return false;
+        }
+
         //método que cria acesso ao sistema
         public string CadastrarLogin(Login login)
         {
@@ -98,5 +103,76 @@ namespace WindowsFormsApp2
         {
 
         }*/
+
+        public string recuperaSenha (string cpf)
+        {
+            string sql;
+            Login login;
+            string resp = "";
+            try
+            {
+                login = new Login();
+                sql = "SELECT * from Logins WHERE cpf=@cpf";
+                SqlConnection conexao = Conecta.getConexao();
+                SqlCommand cmd = conexao.CreateCommand();
+                cmd.CommandText = sql;
+                cmd.Parameters.AddWithValue("@cpf", cpf);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    dr.Read();
+                    login.Usuario = dr["usuario"].ToString();
+                    login.Senha = dr["senha"].ToString();
+                    resp = "Login: " + login.Usuario + " Senha: " + login.Senha;
+                }
+                else
+                {
+                    MessageBox.Show("Não foi encontrado o CPF informado", "IHHHH", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                dr.Close();
+                cmd.Dispose();
+                return resp;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Erro no catch " + ex.Message);
+                return null;
+            }
+        }
+
+        public bool alteraSenha (string novaSenha, string cpf)
+        {
+            string sql;
+            bool resp = false;
+            Login login;
+            int retorno;
+            try
+            {
+                login = new Login();
+                sql = "UPDATE Logins SET senha=@novaSenha WHERE cpf=@cpf";
+                SqlConnection conexao = Conecta.getConexao();
+                SqlCommand cmd = conexao.CreateCommand();
+                cmd.CommandText = sql;
+                cmd.Parameters.AddWithValue("novaSenha", novaSenha);
+                cmd.Parameters.AddWithValue("cpf", cpf);
+                retorno = cmd.ExecuteNonQuery();
+                if (retorno > 0)
+                {
+                    resp = true;
+                }
+                else
+                {
+                    resp = false;
+                }
+                cmd.Dispose();
+                conexao.Dispose();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.ToString(), "Erro");
+            }
+            return resp;
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -69,12 +70,12 @@ namespace WindowsFormsApp2
 
         private void btnCadastrar_Click (object sender, EventArgs e)
         {
-            Manutencao manutencao = montaManutencao();
-            string mensagem = new ManutencaoDAO().gravarManutencao(manutencao);
-            MessageBox.Show(mensagem, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.manutencaoTableAdapter.inserirManutencao(txtDescricao.Text, mtbCpf.Text, Convert.ToDateTime(mtbDataRequisicao.Text), Convert.ToDateTime(mtbDataPrevisao.Text), cboStatus.Text, cboTipoManutencao.Text);
-            this.manutencaoTableAdapter.Fill(this.manutencaoDataSet.Manutencao);
-            limpaCampos();
+                Manutencao manutencao = montaManutencao();
+                string mensagem = new ManutencaoDAO().gravarManutencao(manutencao);
+                MessageBox.Show(mensagem, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.manutencaoTableAdapter.inserirManutencao(txtDescricao.Text, mtbCpf.Text, Convert.ToDateTime(mtbDataRequisicao.Text), Convert.ToDateTime(mtbDataPrevisao.Text), cboStatus.Text, cboTipoManutencao.Text);
+                this.manutencaoTableAdapter.Fill(this.manutencaoDataSet.Manutencao);
+                limpaCampos();   
         }
 
         private void dataGridView1_CellContentDoubleClick (object sender, DataGridViewCellEventArgs e)

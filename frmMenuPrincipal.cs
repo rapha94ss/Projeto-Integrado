@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -97,7 +98,9 @@ namespace WindowsFormsApp2
 
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
         {
-            
+            /*this.Close();
+            Process p = Process.GetCurrentProcess();
+            p.Kill();*/
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -106,14 +109,13 @@ namespace WindowsFormsApp2
             frmLogin login = new frmLogin();
             login.Show();
             this.Close();
+            Process p = Process.GetCurrentProcess();
+            p.Kill();
         }
 
         private void funcionáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.LayoutMdi(MdiLayout.Cascade);
-            frmFuncionario frmFun = new frmFuncionario();
-            frmFun.MdiParent = this;
-            frmFun.Show();
+            
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -163,6 +165,34 @@ namespace WindowsFormsApp2
             frmVendasRealizadas vendas = new frmVendasRealizadas();
             vendas.MdiParent = this;
             vendas.Show();
+        }
+
+        private void fornecedorToolStripMenuItem_Click (object sender, EventArgs e)
+        {
+            frmFornecedor fornecedor = new frmFornecedor();
+            fornecedor.MdiParent = this;
+            fornecedor.Show();
+        }
+
+        private void gerenciarContaToolStripMenuItem_Click (object sender, EventArgs e)
+        {
+            frmAlterarSenha altera = new frmAlterarSenha();
+            altera.MdiParent = this;
+            altera.Show();
+        }
+
+        private void cadastrarFuncionárioToolStripMenuItem_Click (object sender, EventArgs e)
+        {
+            this.LayoutMdi(MdiLayout.Cascade);
+            frmFuncionario frmFun = new frmFuncionario();
+            frmFun.MdiParent = this;
+            frmFun.Show();
+        }
+
+        private void frmMenuPrincipal_FormClosing (object sender, FormClosingEventArgs e)
+        {
+            Process p = Process.GetCurrentProcess();
+            p.Kill();
         }
     }
 }

@@ -29,11 +29,13 @@
         private void InitializeComponent ()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegistroVenda));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTesteCod = new System.Windows.Forms.Label();
             this.btnCarrinho = new System.Windows.Forms.Button();
             this.cboPreco = new System.Windows.Forms.ComboBox();
-            this.estoqueBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.estoqueDataSet = new WindowsFormsApp2.estoqueDataSet();
+            this.estoqueBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.estoqueDefDataSet = new WindowsFormsApp2.EstoqueDefDataSet();
             this.lblCarrinho = new System.Windows.Forms.Label();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,6 +43,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cboItem = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.estoqueBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.codVendaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,9 +52,12 @@
             this.cpfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.formaPagamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.parcelasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vendaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.vendaEstoqueDataSet = new WindowsFormsApp2.VendaEstoqueDataSet();
             this.vendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vendasDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vendasDataSet = new WindowsFormsApp2.vendasDataSet();
+            this.vendaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.lblPrecoFinal = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cboParcelas = new System.Windows.Forms.ComboBox();
@@ -67,7 +73,6 @@
             this.estoqueBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.estoqueTableAdapter = new WindowsFormsApp2.bancodedadosDataSet1TableAdapters.EstoqueTableAdapter();
             this.estoqueTableAdapter1 = new WindowsFormsApp2.bancodedadosDataSet2TableAdapters.EstoqueTableAdapter();
-            this.estoqueTableAdapter2 = new WindowsFormsApp2.estoqueDataSetTableAdapters.EstoqueTableAdapter();
             this.vendaTableAdapter = new WindowsFormsApp2.vendasDataSetTableAdapters.VendaTableAdapter();
             this.label9 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -76,24 +81,38 @@
             this.Preço = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLimparCarrinho = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
+            this.estoqueTableAdapter2 = new WindowsFormsApp2.EstoqueDefDataSetTableAdapters.EstoqueTableAdapter();
+            this.vendaTableAdapter1 = new WindowsFormsApp2.VendaEstoqueDataSetTableAdapters.VendaTableAdapter();
+            this.estoqueBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.estoqueTableAdapter3 = new WindowsFormsApp2.VendaEstoqueDataSetTableAdapters.EstoqueTableAdapter();
+            this.estoqueBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
+            this.estoqueBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estoqueDefDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.estoqueDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendaEstoqueDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendasDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendasDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bancodedadosDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bancodedadosDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridCarrinho)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource6)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lblTesteCod);
             this.panel1.Controls.Add(this.btnCarrinho);
             this.panel1.Controls.Add(this.cboPreco);
             this.panel1.Controls.Add(this.lblCarrinho);
@@ -109,6 +128,16 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // lblTesteCod
+            // 
+            this.lblTesteCod.AutoSize = true;
+            this.lblTesteCod.Location = new System.Drawing.Point(329, 41);
+            this.lblTesteCod.Name = "lblTesteCod";
+            this.lblTesteCod.Size = new System.Drawing.Size(63, 13);
+            this.lblTesteCod.TabIndex = 23;
+            this.lblTesteCod.Text = "CodProduto";
+            this.lblTesteCod.Visible = false;
+            // 
             // btnCarrinho
             // 
             this.btnCarrinho.Location = new System.Drawing.Point(121, 142);
@@ -121,7 +150,8 @@
             // 
             // cboPreco
             // 
-            this.cboPreco.DataSource = this.estoqueBindingSource2;
+            this.cboPreco.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.estoqueBindingSource3, "CodProduto", true));
+            this.cboPreco.DataSource = this.estoqueBindingSource3;
             this.cboPreco.DisplayMember = "Preco";
             this.cboPreco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPreco.FormattingEnabled = true;
@@ -129,17 +159,18 @@
             this.cboPreco.Name = "cboPreco";
             this.cboPreco.Size = new System.Drawing.Size(121, 21);
             this.cboPreco.TabIndex = 2;
-            this.cboPreco.ValueMember = "Descricao";
+            this.cboPreco.ValueMember = "CodProduto";
+            this.cboPreco.TextChanged += new System.EventHandler(this.cboPreco_TextChanged);
             // 
-            // estoqueBindingSource2
+            // estoqueBindingSource3
             // 
-            this.estoqueBindingSource2.DataMember = "Estoque";
-            this.estoqueBindingSource2.DataSource = this.estoqueDataSet;
+            this.estoqueBindingSource3.DataMember = "Estoque";
+            this.estoqueBindingSource3.DataSource = this.estoqueDefDataSet;
             // 
-            // estoqueDataSet
+            // estoqueDefDataSet
             // 
-            this.estoqueDataSet.DataSetName = "estoqueDataSet";
-            this.estoqueDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.estoqueDefDataSet.DataSetName = "EstoqueDefDataSet";
+            this.estoqueDefDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblCarrinho
             // 
@@ -189,7 +220,7 @@
             // 
             // cboItem
             // 
-            this.cboItem.DataSource = this.estoqueBindingSource2;
+            this.cboItem.DataSource = this.estoqueBindingSource3;
             this.cboItem.DisplayMember = "Descricao";
             this.cboItem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboItem.FormattingEnabled = true;
@@ -209,6 +240,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Item: ";
             // 
+            // estoqueBindingSource2
+            // 
+            this.estoqueBindingSource2.DataMember = "Estoque";
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
@@ -221,7 +256,7 @@
             this.cpfDataGridViewTextBoxColumn,
             this.formaPagamentoDataGridViewTextBoxColumn,
             this.parcelasDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.vendaBindingSource;
+            this.dataGridView1.DataSource = this.vendaBindingSource2;
             this.dataGridView1.Location = new System.Drawing.Point(305, 103);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(161, 63);
@@ -271,6 +306,16 @@
             this.parcelasDataGridViewTextBoxColumn.HeaderText = "Parcelas";
             this.parcelasDataGridViewTextBoxColumn.Name = "parcelasDataGridViewTextBoxColumn";
             // 
+            // vendaBindingSource2
+            // 
+            this.vendaBindingSource2.DataMember = "Venda";
+            this.vendaBindingSource2.DataSource = this.vendaEstoqueDataSet;
+            // 
+            // vendaEstoqueDataSet
+            // 
+            this.vendaEstoqueDataSet.DataSetName = "VendaEstoqueDataSet";
+            this.vendaEstoqueDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // vendaBindingSource
             // 
             this.vendaBindingSource.DataMember = "Venda";
@@ -285,6 +330,11 @@
             // 
             this.vendasDataSet.DataSetName = "vendasDataSet";
             this.vendasDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vendaBindingSource1
+            // 
+            this.vendaBindingSource1.DataMember = "Venda";
+            this.vendaBindingSource1.DataSource = this.vendaEstoqueDataSet;
             // 
             // lblPrecoFinal
             // 
@@ -408,10 +458,6 @@
             // 
             this.estoqueTableAdapter1.ClearBeforeFill = true;
             // 
-            // estoqueTableAdapter2
-            // 
-            this.estoqueTableAdapter2.ClearBeforeFill = true;
-            // 
             // vendaTableAdapter
             // 
             this.vendaTableAdapter.ClearBeforeFill = true;
@@ -488,6 +534,33 @@
             this.label10.TabIndex = 27;
             this.label10.Text = "Itens no carrinho: ";
             // 
+            // estoqueTableAdapter2
+            // 
+            this.estoqueTableAdapter2.ClearBeforeFill = true;
+            // 
+            // vendaTableAdapter1
+            // 
+            this.vendaTableAdapter1.ClearBeforeFill = true;
+            // 
+            // estoqueBindingSource4
+            // 
+            this.estoqueBindingSource4.DataMember = "Estoque";
+            this.estoqueBindingSource4.DataSource = this.vendaEstoqueDataSet;
+            // 
+            // estoqueTableAdapter3
+            // 
+            this.estoqueTableAdapter3.ClearBeforeFill = true;
+            // 
+            // estoqueBindingSource5
+            // 
+            this.estoqueBindingSource5.DataMember = "Estoque";
+            this.estoqueBindingSource5.DataSource = this.vendaEstoqueDataSet;
+            // 
+            // estoqueBindingSource6
+            // 
+            this.estoqueBindingSource6.DataMember = "Estoque";
+            this.estoqueBindingSource6.DataSource = this.vendaEstoqueDataSet;
+            // 
             // frmRegistroVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -498,17 +571,23 @@
             this.Controls.Add(this.DataGridCarrinho);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmRegistroVenda";
-            this.Text = "frmRegistroVenda";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "RegistroVenda";
             this.Load += new System.EventHandler(this.frmRegistroVenda_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estoqueDefDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.estoqueDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendaEstoqueDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendasDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendasDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bancodedadosDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bancodedadosDataSet1)).EndInit();
@@ -516,6 +595,9 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridCarrinho)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -533,9 +615,9 @@
         private System.Windows.Forms.BindingSource estoqueBindingSource1;
         private bancodedadosDataSet2TableAdapters.EstoqueTableAdapter estoqueTableAdapter1;
         private System.Windows.Forms.Label label2;
-        private estoqueDataSet estoqueDataSet;
+        //private estoqueDataSet estoqueDataSet;
         private System.Windows.Forms.BindingSource estoqueBindingSource2;
-        private estoqueDataSetTableAdapters.EstoqueTableAdapter estoqueTableAdapter2;
+        //private estoqueDataSetTableAdapters.EstoqueTableAdapter estoqueTableAdapter2;
         private System.Windows.Forms.MaskedTextBox mtbCpf;
         private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.Label label4;
@@ -570,5 +652,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Preço;
         private System.Windows.Forms.Button btnLimparCarrinho;
         private System.Windows.Forms.Label label10;
+        private EstoqueDefDataSet estoqueDefDataSet;
+        private System.Windows.Forms.BindingSource estoqueBindingSource3;
+        private EstoqueDefDataSetTableAdapters.EstoqueTableAdapter estoqueTableAdapter2;
+        private System.Windows.Forms.Label lblTesteCod;
+        private VendaEstoqueDataSet vendaEstoqueDataSet;
+        private System.Windows.Forms.BindingSource vendaBindingSource1;
+        private VendaEstoqueDataSetTableAdapters.VendaTableAdapter vendaTableAdapter1;
+        private System.Windows.Forms.BindingSource vendaBindingSource2;
+        private System.Windows.Forms.BindingSource estoqueBindingSource4;
+        private VendaEstoqueDataSetTableAdapters.EstoqueTableAdapter estoqueTableAdapter3;
+        private System.Windows.Forms.BindingSource estoqueBindingSource6;
+        private System.Windows.Forms.BindingSource estoqueBindingSource5;
     }
 }

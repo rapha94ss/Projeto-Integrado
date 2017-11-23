@@ -34,16 +34,18 @@
             this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.consultarVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.verTodasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manutençãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerenciarManutençõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.manutençõesConcluídasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.funcionáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarFuncionárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.gerenciarContaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fornecedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -61,6 +63,7 @@
             this.funcionáriosToolStripMenuItem,
             this.clientesToolStripMenuItem,
             this.estoqueToolStripMenuItem,
+            this.fornecedorToolStripMenuItem,
             this.sairToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
@@ -73,8 +76,6 @@
             this.fileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem,
             this.toolStripSeparator1,
-            this.consultarVendaToolStripMenuItem,
-            this.toolStripSeparator2,
             this.verTodasToolStripMenuItem});
             this.fileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
             this.fileMenu.Name = "fileMenu";
@@ -96,22 +97,11 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(338, 6);
             // 
-            // consultarVendaToolStripMenuItem
-            // 
-            this.consultarVendaToolStripMenuItem.Name = "consultarVendaToolStripMenuItem";
-            this.consultarVendaToolStripMenuItem.Size = new System.Drawing.Size(341, 36);
-            this.consultarVendaToolStripMenuItem.Text = "Consultar Venda";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(338, 6);
-            // 
             // verTodasToolStripMenuItem
             // 
             this.verTodasToolStripMenuItem.Name = "verTodasToolStripMenuItem";
             this.verTodasToolStripMenuItem.Size = new System.Drawing.Size(341, 36);
-            this.verTodasToolStripMenuItem.Text = "Ver Todas";
+            this.verTodasToolStripMenuItem.Text = "Ver Todas as Vendas";
             this.verTodasToolStripMenuItem.Click += new System.EventHandler(this.verTodasToolStripMenuItem_Click);
             // 
             // manutençãoToolStripMenuItem
@@ -146,10 +136,33 @@
             // 
             // funcionáriosToolStripMenuItem
             // 
+            this.funcionáriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastrarFuncionárioToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.gerenciarContaToolStripMenuItem});
             this.funcionáriosToolStripMenuItem.Name = "funcionáriosToolStripMenuItem";
             this.funcionáriosToolStripMenuItem.Size = new System.Drawing.Size(162, 36);
             this.funcionáriosToolStripMenuItem.Text = "Funcionários";
             this.funcionáriosToolStripMenuItem.Click += new System.EventHandler(this.funcionáriosToolStripMenuItem_Click);
+            // 
+            // cadastrarFuncionárioToolStripMenuItem
+            // 
+            this.cadastrarFuncionárioToolStripMenuItem.Name = "cadastrarFuncionárioToolStripMenuItem";
+            this.cadastrarFuncionárioToolStripMenuItem.Size = new System.Drawing.Size(321, 36);
+            this.cadastrarFuncionárioToolStripMenuItem.Text = "Cadastrar Funcionário";
+            this.cadastrarFuncionárioToolStripMenuItem.Click += new System.EventHandler(this.cadastrarFuncionárioToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(318, 6);
+            // 
+            // gerenciarContaToolStripMenuItem
+            // 
+            this.gerenciarContaToolStripMenuItem.Name = "gerenciarContaToolStripMenuItem";
+            this.gerenciarContaToolStripMenuItem.Size = new System.Drawing.Size(321, 36);
+            this.gerenciarContaToolStripMenuItem.Text = "Gerenciar Conta";
+            this.gerenciarContaToolStripMenuItem.Click += new System.EventHandler(this.gerenciarContaToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
@@ -164,6 +177,13 @@
             this.estoqueToolStripMenuItem.Size = new System.Drawing.Size(112, 36);
             this.estoqueToolStripMenuItem.Text = "Estoque";
             this.estoqueToolStripMenuItem.Click += new System.EventHandler(this.estoqueToolStripMenuItem_Click);
+            // 
+            // fornecedorToolStripMenuItem
+            // 
+            this.fornecedorToolStripMenuItem.Name = "fornecedorToolStripMenuItem";
+            this.fornecedorToolStripMenuItem.Size = new System.Drawing.Size(148, 36);
+            this.fornecedorToolStripMenuItem.Text = "Fornecedor";
+            this.fornecedorToolStripMenuItem.Click += new System.EventHandler(this.fornecedorToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
@@ -197,12 +217,14 @@
             this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "frmMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmMenuPrincipal";
+            this.Text = "MenuPrincipal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMenuPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
@@ -222,8 +244,6 @@
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem consultarVendaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem verTodasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manutençãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem funcionáriosToolStripMenuItem;
@@ -233,6 +253,10 @@
         private System.Windows.Forms.ToolStripMenuItem manutençõesConcluídasToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem gerenciarManutençõesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fornecedorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarFuncionárioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem gerenciarContaToolStripMenuItem;
     }
 }
 

@@ -26,11 +26,14 @@ namespace WindowsFormsApp2
                 cmd.Parameters.AddWithValue("@cpf", venda.Cpf);
                 cmd.Parameters.AddWithValue("@formapagamento", venda.FormaPagamento);
                 cmd.Parameters.AddWithValue("@parcelas", venda.Parcelas);
+                //cmd.Parameters.AddWithValue("@quantidadeEstoque", venda.Quantidade);
+                //cmd.Parameters.AddWithValue("@CodProduto", codVenda);
 
                 retorno = cmd.ExecuteNonQuery();
                 if (retorno > 0)
                 {
                     resp = "Venda realizada";
+                    //atualizarEstoque(venda.Quantidade, codVenda);
                 }
                 else
                 {
@@ -46,6 +49,41 @@ namespace WindowsFormsApp2
             catch (NullReferenceException ex)
             {
                
+            }
+            return resp;
+        }
+
+        public string atualizarEstoque (int quantidade, int codVenda)
+        {
+            string sql;
+            int retorno;
+            string resp = "";
+            try
+            {
+                SqlConnection conexao = Conecta.getConexao();
+                sql = "UPDATE Estoque SET Quantidade = Quantidade - @quantidadeEstoque WHERE CodProduto=@CodProduto";
+
+                SqlCommand cmd = conexao.CreateCommand();
+                cmd.CommandText = sql;
+                cmd.Parameters.AddWithValue("@quantidadeEstoque", quantidade);
+                cmd.Parameters.AddWithValue("@CodProduto", codVenda);
+
+                //cmd
+                retorno = cmd.ExecuteNonQuery();
+                if (retorno > 0)
+                {
+                    resp = "Estoque atualizado";
+                }
+                else
+                {
+                    resp = "Falha ao atualizar estoque";
+                }
+                cmd.Dispose();
+                conexao.Dispose();
+            }
+            catch (SqlException ex)
+            {
+                resp = "Erro na atualização do estoque" + ex.ToString();
             }
             return resp;
         }
